@@ -1,0 +1,41 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ptr/logo.png</file>
+        <file>ptr/Close1.png</file>
+        <file>ptr/Max1.png</file>
+        <file>ptr/Max1-1.png</file>
+        <file>ptr/Min1.png</file>
+        <file>ptr/Real_time.png</file>
+        <file>ptr/Fault_detect.png</file>
+        <file>ptr/Record_query.png</file>
+        <file>ptr/control.png</file>
+        <file>ptr/humidity.png</file>
+        <file>ptr/Light.png</file>
+        <file>ptr/pressure.png</file>
+        <file>ptr/Temp.png</file>
+        <file>ptr/voc.png</file>
+        <file>ptr/EC.png</file>
+        <file>ptr/pH.png</file>
+        <file>ptr/TDS.png</file>
+        <file>ptr/turbidity.png</file>
+        <file>ptr/WaterLevel.png</file>
+        <file>ptr/downJT.png</file>
+        <file>ptr/upJT.png</file>
+        <file>ptr/NOtype.png</file>
+        <file>ptr/OKtype.png</file>
+        <file>ptr/StateOxygen.png</file>
+        <file>ptr/StateTemp.png</file>
+        <file>ptr/StateWaterLevel.png</file>
+        <file>ptr/StateDianYuan.png</file>
+        <file>ptr/PCIcon.png</file>
+        <file>ptr/YJIcon.png</file>
+        <file>ptr/TimeBox.png</file>
+        <file>ptr/TypeBox.png</file>
+        <file>ptr/Search.png</file>
+        <file>ptr/AutoTW.png</file>
+        <file>ptr/StateFeeding.png</file>
+        <file>ptr/AutoEnvironment.png</file>
+        <file>ptr/TypeClose.png</file>
+        <file>ptr/TypeOpen.png</file>
+    </qresource>
+</RCC>
