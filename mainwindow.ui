@@ -1573,7 +1573,7 @@ border:2px solid rgb(13,39,67);
                        <string notr="true"/>
                       </property>
                       <property name="text">
-                       <string>供电控制</string>
+                       <string>电池控制</string>
                       </property>
                       <property name="icon">
                        <iconset resource="res.qrc">
@@ -1599,7 +1599,7 @@ border:2px solid rgb(13,39,67);
                     <string notr="true"/>
                    </property>
                    <property name="currentIndex">
-                    <number>2</number>
+                    <number>5</number>
                    </property>
                    <widget class="QWidget" name="TWpage">
                     <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -1638,6 +1638,18 @@ border:2px solid rgb(13,39,67);
                         </property>
                         <item>
                          <widget class="QWidget" name="TWKZleftWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>400</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>400</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
                           <layout class="QVBoxLayout" name="verticalLayout_17">
                            <property name="spacing">
                             <number>20</number>
@@ -1803,7 +1815,7 @@ color: rgb(255, 255, 255);
 }</string>
                               </property>
                               <property name="text">
-                               <string>2/3</string>
+                               <string>0/1</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
@@ -1960,7 +1972,7 @@ color:white;
 </string>
                               </property>
                               <property name="text">
-                               <string>单次投喂重量</string>
+                               <string>单次投喂占比</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
@@ -1983,7 +1995,7 @@ color: rgb(255, 255, 255);
 }</string>
                               </property>
                               <property name="text">
-                               <string>0.50</string>
+                               <string>1%</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
@@ -2006,7 +2018,7 @@ color: rgb(166,173,232);
 }</string>
                               </property>
                               <property name="text">
-                               <string>kg</string>
+                               <string>%</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
@@ -2019,22 +2031,7 @@ color: rgb(166,173,232);
                         </item>
                         <item>
                          <widget class="QWidget" name="TWKZrightWidget" native="true">
-                          <layout class="QVBoxLayout" name="verticalLayout_18">
-                           <property name="spacing">
-                            <number>10</number>
-                           </property>
-                           <property name="leftMargin">
-                            <number>10</number>
-                           </property>
-                           <property name="topMargin">
-                            <number>10</number>
-                           </property>
-                           <property name="rightMargin">
-                            <number>10</number>
-                           </property>
-                           <property name="bottomMargin">
-                            <number>10</number>
-                           </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_16">
                            <item>
                             <widget class="QWidget" name="widget_7" native="true">
                              <property name="minimumSize">
@@ -2118,87 +2115,45 @@ font-weight:bold;
                             </widget>
                            </item>
                            <item>
-                            <widget class="QWidget" name="widget_5" native="true">
-                             <property name="maximumSize">
+                            <widget class="QLabel" name="label_18">
+                             <property name="minimumSize">
                               <size>
-                               <width>16777215</width>
-                               <height>80</height>
+                               <width>0</width>
+                               <height>50</height>
                               </size>
                              </property>
                              <property name="styleSheet">
-                              <string notr="true">QLabel
-{
-font: 13pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-}</string>
+                              <string notr="true">font: 18pt &quot;楷体&quot;;
+color: rgb(122, 175, 227);</string>
                              </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_9">
+                             <property name="text">
+                              <string>自动投喂定次设置</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QWidget" name="widget_27" native="true">
+                             <layout class="QHBoxLayout" name="horizontalLayout_39">
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
                               <item>
-                               <widget class="QLabel" name="label">
-                                <property name="styleSheet">
-                                 <string notr="true"/>
-                                </property>
-                                <property name="text">
-                                 <string>每日投喂次数:</string>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QSpinBox" name="TWKZ_TWnumValue">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>180</width>
-                                  <height>45</height>
-                                 </size>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">QSpinBox
-{	
-border-radius:8px;
-border:2px solid;
-font: 18pt &quot;楷体&quot;;
-font-weight:bold;
-color: rgb(122, 175, 227);
-background-color: rgb(36, 61, 91);
-}
-QSpinBox::up-button {
-	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-QSpinBox::down-button {
-	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-</string>
-                                </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
-                                </property>
-                                <property name="minimum">
-                                 <number>1</number>
-                                </property>
-                                <property name="maximum">
-                                 <number>4</number>
-                                </property>
-                                <property name="value">
-                                 <number>3</number>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QLabel" name="label_3">
-                                <property name="styleSheet">
-                                 <string notr="true"/>
-                                </property>
-                                <property name="text">
-                                 <string>次</string>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <spacer name="horizontalSpacer_5">
+                               <spacer name="horizontalSpacer_67">
                                 <property name="orientation">
                                  <enum>Qt::Horizontal</enum>
                                 </property>
@@ -2211,891 +2166,162 @@ QSpinBox::down-button {
                                </spacer>
                               </item>
                               <item>
-                               <widget class="QPushButton" name="TWKZ_btnTWnum">
+                               <widget class="QComboBox" name="feedingNumBox">
                                 <property name="minimumSize">
                                  <size>
-                                  <width>150</width>
-                                  <height>50</height>
-                                 </size>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">QPushButton
-{
-background-color: rgb(36,61,91);
-color: rgb(122, 175, 227);
-font: 14pt &quot;楷体&quot;;
-border-radius:8px;
-border:2px solid rgb(13,39,67);
-}
-QPushButton:hover
-{
-border:2px solid rgb(122, 175, 227);
-font: 16pt &quot;楷体&quot;;
-}</string>
-                                </property>
-                                <property name="text">
-                                 <string>点击修改</string>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <spacer name="horizontalSpacer_6">
-                                <property name="orientation">
-                                 <enum>Qt::Horizontal</enum>
-                                </property>
-                                <property name="sizeHint" stdset="0">
-                                 <size>
-                                  <width>40</width>
-                                  <height>20</height>
-                                 </size>
-                                </property>
-                               </spacer>
-                              </item>
-                             </layout>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QWidget" name="TWKZ_timeWidget" native="true">
-                             <property name="styleSheet">
-                              <string notr="true">QLabel
-{
-font: 13pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-}</string>
-                             </property>
-                             <layout class="QVBoxLayout" name="verticalLayout_16">
-                              <item>
-                               <widget class="QWidget" name="TWKZ_time1Widget" native="true">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>0</width>
-                                  <height>45</height>
-                                 </size>
-                                </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_11">
-                                 <property name="spacing">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="leftMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="topMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="rightMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="bottomMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <item>
-                                  <spacer name="horizontalSpacer_17">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QLabel" name="label_5">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>0</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>16777215</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true"/>
-                                   </property>
-                                   <property name="text">
-                                    <string>第一次投喂时间:</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_25">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>30</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QTimeEdit" name="TWKZ_TWtime1Value">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>120</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>170</width>
-                                     <height>16777215</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">QTimeEdit
-{	
-border-radius:8px;
-border:2px solid;
-font: 12pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-background-color: rgb(36, 61, 91);
-}
-QTimeEdit::up-button {
-	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-QTimeEdit::down-button {
-	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-</string>
-                                   </property>
-                                   <property name="alignment">
-                                    <set>Qt::AlignCenter</set>
-                                   </property>
-                                   <property name="dateTime">
-                                    <datetime>
-                                     <hour>0</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                     <year>2000</year>
-                                     <month>1</month>
-                                     <day>1</day>
-                                    </datetime>
-                                   </property>
-                                   <property name="minimumTime">
-                                    <time>
-                                     <hour>0</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                    </time>
-                                   </property>
-                                   <property name="displayFormat">
-                                    <string>HH:mm:ss</string>
-                                   </property>
-                                   <property name="calendarPopup">
-                                    <bool>false</bool>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_18">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                </layout>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QWidget" name="TWKZ_time2Widget" native="true">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>0</width>
-                                  <height>45</height>
-                                 </size>
-                                </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_12">
-                                 <property name="spacing">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="leftMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="topMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="rightMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="bottomMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <item>
-                                  <spacer name="horizontalSpacer_19">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QLabel" name="label_6">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>0</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>16777215</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true"/>
-                                   </property>
-                                   <property name="text">
-                                    <string>第二次投喂时间:</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_26">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>30</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QTimeEdit" name="TWKZ_TWtime2Value">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>120</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>170</width>
-                                     <height>16777215</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">QTimeEdit
-{	
-border-radius:8px;
-border:2px solid;
-font: 12pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-background-color: rgb(36, 61, 91);
-}
-QTimeEdit::up-button {
-	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-QTimeEdit::down-button {
-	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-</string>
-                                   </property>
-                                   <property name="alignment">
-                                    <set>Qt::AlignCenter</set>
-                                   </property>
-                                   <property name="dateTime">
-                                    <datetime>
-                                     <hour>6</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                     <year>2000</year>
-                                     <month>1</month>
-                                     <day>1</day>
-                                    </datetime>
-                                   </property>
-                                   <property name="minimumTime">
-                                    <time>
-                                     <hour>0</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                    </time>
-                                   </property>
-                                   <property name="displayFormat">
-                                    <string>HH:mm:ss</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_22">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                </layout>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QWidget" name="TWKZ_time3Widget" native="true">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>0</width>
-                                  <height>45</height>
+                                  <width>466</width>
+                                  <height>80</height>
                                  </size>
                                 </property>
                                 <property name="maximumSize">
                                  <size>
-                                  <width>16777215</width>
-                                  <height>99999</height>
+                                  <width>500</width>
+                                  <height>80</height>
                                  </size>
                                 </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_13">
-                                 <property name="spacing">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="leftMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="topMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="rightMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="bottomMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <item>
-                                  <spacer name="horizontalSpacer_20">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QLabel" name="label_7">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>0</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>16777215</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true"/>
-                                   </property>
-                                   <property name="text">
-                                    <string>第三次投喂时间:</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_27">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>30</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QTimeEdit" name="TWKZ_TWtime3Value">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>120</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>170</width>
-                                     <height>16777215</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">QTimeEdit
-{	
-border-radius:8px;
-border:2px solid;
-font: 12pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-background-color: rgb(36, 61, 91);
-}
-QTimeEdit::up-button {
-	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-QTimeEdit::down-button {
-	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-</string>
-                                   </property>
-                                   <property name="alignment">
-                                    <set>Qt::AlignCenter</set>
-                                   </property>
-                                   <property name="dateTime">
-                                    <datetime>
-                                     <hour>12</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                     <year>2000</year>
-                                     <month>1</month>
-                                     <day>1</day>
-                                    </datetime>
-                                   </property>
-                                   <property name="minimumTime">
-                                    <time>
-                                     <hour>0</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                    </time>
-                                   </property>
-                                   <property name="displayFormat">
-                                    <string>HH:mm:ss</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_23">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                </layout>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QWidget" name="TWKZ_time4Widget" native="true">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>0</width>
-                                  <height>45</height>
-                                 </size>
-                                </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_14">
-                                 <property name="spacing">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="leftMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="topMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="rightMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="bottomMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <item>
-                                  <spacer name="horizontalSpacer_21">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QLabel" name="label_8">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>0</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>16777215</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true"/>
-                                   </property>
-                                   <property name="text">
-                                    <string>第四次投喂时间:</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_28">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>30</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QTimeEdit" name="TWKZ_TWtime4Value">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>120</width>
-                                     <height>40</height>
-                                    </size>
-                                   </property>
-                                   <property name="maximumSize">
-                                    <size>
-                                     <width>170</width>
-                                     <height>16777215</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">QTimeEdit
-{	
-border-radius:8px;
-border:2px solid;
-font: 12pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-background-color: rgb(36, 61, 91);
-}
-QTimeEdit::up-button {
-	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-QTimeEdit::down-button {
-	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
-}
-</string>
-                                   </property>
-                                   <property name="alignment">
-                                    <set>Qt::AlignCenter</set>
-                                   </property>
-                                   <property name="dateTime">
-                                    <datetime>
-                                     <hour>18</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                     <year>2000</year>
-                                     <month>1</month>
-                                     <day>1</day>
-                                    </datetime>
-                                   </property>
-                                   <property name="maximumDateTime">
-                                    <datetime>
-                                     <hour>23</hour>
-                                     <minute>59</minute>
-                                     <second>59</second>
-                                     <year>2000</year>
-                                     <month>1</month>
-                                     <day>1</day>
-                                    </datetime>
-                                   </property>
-                                   <property name="minimumTime">
-                                    <time>
-                                     <hour>0</hour>
-                                     <minute>0</minute>
-                                     <second>0</second>
-                                    </time>
-                                   </property>
-                                   <property name="displayFormat">
-                                    <string>HH:mm:ss</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_24">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeType">
-                                    <enum>QSizePolicy::Maximum</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>60</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                </layout>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QWidget" name="widget_12" native="true">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>0</width>
-                                  <height>50</height>
-                                 </size>
-                                </property>
-                                <property name="maximumSize">
-                                 <size>
-                                  <width>16777215</width>
-                                  <height>50</height>
-                                 </size>
-                                </property>
-                                <layout class="QHBoxLayout" name="horizontalLayout_15">
-                                 <property name="spacing">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="leftMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="topMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="rightMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <property name="bottomMargin">
-                                  <number>0</number>
-                                 </property>
-                                 <item>
-                                  <spacer name="horizontalSpacer_15">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>188</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                 <item>
-                                  <widget class="QPushButton" name="TWKZ_btnTWtime">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>220</width>
-                                     <height>50</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">QPushButton
-{
-background-color: rgb(36,61,91);
-color: rgb(122, 175, 227);
-font: 14pt &quot;楷体&quot;;
-border-radius:8px;
-border:2px solid rgb(13,39,67);
-}
-QPushButton:hover
-{
-border:2px solid rgb(122, 175, 227);
-font: 16pt &quot;楷体&quot;;
-}</string>
-                                   </property>
-                                   <property name="text">
-                                    <string>点击修改</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item>
-                                  <spacer name="horizontalSpacer_16">
-                                   <property name="orientation">
-                                    <enum>Qt::Horizontal</enum>
-                                   </property>
-                                   <property name="sizeHint" stdset="0">
-                                    <size>
-                                     <width>188</width>
-                                     <height>20</height>
-                                    </size>
-                                   </property>
-                                  </spacer>
-                                 </item>
-                                </layout>
-                               </widget>
-                              </item>
-                             </layout>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QWidget" name="widget_6" native="true">
-                             <property name="maximumSize">
-                              <size>
-                               <width>16777215</width>
-                               <height>80</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">QLabel
-{
-font: 13pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-}</string>
-                             </property>
-                             <layout class="QHBoxLayout" name="horizontalLayout_10">
-                              <item>
-                               <widget class="QLabel" name="label_2">
-                                <property name="styleSheet">
-                                 <string notr="true"/>
-                                </property>
-                                <property name="text">
-                                 <string>单次投喂重量:</string>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QDoubleSpinBox" name="TWKZ_TWweightValue">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>180</width>
-                                  <height>45</height>
-                                 </size>
+                                <property name="layoutDirection">
+                                 <enum>Qt::LeftToRight</enum>
                                 </property>
                                 <property name="styleSheet">
-                                 <string notr="true">QDoubleSpinBox
-{	
-border-radius:8px;
-border:2px solid;
-font: 18pt &quot;楷体&quot;;
-color: rgb(122, 175, 227);
-background-color: rgb(36, 61, 91);
+                                 <string notr="true">/*QCombobox主体*/
+QComboBox {
+	font: 30pt &quot;楷体&quot;;
+	font-weight:bold;
+	color: rgb(122, 175, 227);
+    border: 2px solid rgb(122,175,227);/*设置线宽*/
+	background-color: rgb(27, 49, 73);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(122,175,227);/*边框颜色*/
+	padding-left: 10px;/*左侧边距*/
 }
-QDoubleSpinBox::up-button {
-	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
-	width: 18px;/*设置该图标的宽高*/
-	height: 18px;
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
 }
-QDoubleSpinBox::down-button {
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
 	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
 	width: 18px;/*设置该图标的宽高*/
 	height: 18px;
 }
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow::on {
+	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+	font: 13pt &quot;楷体&quot;;
+    border: 2px solid rgb(202, 221, 245);/*边框宽度、线形、颜色*/
+	/*背景颜色*/
+	background-color: rgba(36, 61, 91,0.8);
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 12em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	border-radius: 10px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgba(36, 61, 91,0.3);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	background-color: rgb(0, 85, 200);
+}
 </string>
                                 </property>
-                                <property name="alignment">
-                                 <set>Qt::AlignCenter</set>
+                                <property name="insertPolicy">
+                                 <enum>QComboBox::InsertAtBottom</enum>
                                 </property>
-                                <property name="readOnly">
+                                <property name="sizeAdjustPolicy">
+                                 <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                                </property>
+                                <property name="duplicatesEnabled">
                                  <bool>false</bool>
                                 </property>
-                                <property name="value">
-                                 <double>0.500000000000000</double>
-                                </property>
+                                <item>
+                                 <property name="text">
+                                  <string>一天一次</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>一天两次</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>两天一次</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>三天两次</string>
+                                 </property>
+                                </item>
                                </widget>
                               </item>
                               <item>
-                               <widget class="QLabel" name="label_4">
-                                <property name="styleSheet">
-                                 <string notr="true"/>
-                                </property>
-                                <property name="text">
-                                 <string>kg</string>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <spacer name="horizontalSpacer_13">
+                               <spacer name="horizontalSpacer_68">
                                 <property name="orientation">
                                  <enum>Qt::Horizontal</enum>
                                 </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::Minimum</enum>
+                                </property>
                                 <property name="sizeHint" stdset="0">
                                  <size>
-                                  <width>24</width>
+                                  <width>40</width>
                                   <height>20</height>
                                  </size>
                                 </property>
                                </spacer>
                               </item>
                               <item>
-                               <widget class="QPushButton" name="TWKZ_btnTWweight">
+                               <widget class="QPushButton" name="feedingNumBox_btn">
                                 <property name="minimumSize">
                                  <size>
-                                  <width>150</width>
-                                  <height>50</height>
+                                  <width>200</width>
+                                  <height>60</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>16777215</height>
                                  </size>
                                 </property>
                                 <property name="styleSheet">
@@ -3118,18 +2344,471 @@ font: 16pt &quot;楷体&quot;;
                                 </property>
                                </widget>
                               </item>
+                             </layout>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_16">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>50</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">font: 18pt &quot;楷体&quot;;
+color: rgb(122, 175, 227);</string>
+                             </property>
+                             <property name="text">
+                              <string>自动投喂定时设置</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QWidget" name="widget_26" native="true">
+                             <layout class="QHBoxLayout" name="horizontalLayout_38">
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
                               <item>
-                               <spacer name="horizontalSpacer_14">
+                               <spacer name="horizontalSpacer_65">
                                 <property name="orientation">
                                  <enum>Qt::Horizontal</enum>
                                 </property>
                                 <property name="sizeHint" stdset="0">
                                  <size>
-                                  <width>25</width>
-                                  <height>47</height>
+                                  <width>40</width>
+                                  <height>20</height>
                                  </size>
                                 </property>
                                </spacer>
+                              </item>
+                              <item>
+                               <widget class="QComboBox" name="feedingTimeBox">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>466</width>
+                                  <height>80</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>500</width>
+                                  <height>80</height>
+                                 </size>
+                                </property>
+                                <property name="layoutDirection">
+                                 <enum>Qt::LeftToRight</enum>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">/*QCombobox主体*/
+QComboBox {
+	font: 30pt &quot;楷体&quot;;
+	font-weight:bold;
+	color: rgb(122, 175, 227);
+    border: 2px solid rgb(122,175,227);/*设置线宽*/
+	background-color: rgb(27, 49, 73);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(122,175,227);/*边框颜色*/
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow::on {
+	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+	font: 13pt &quot;楷体&quot;;
+    border: 2px solid rgb(202, 221, 245);/*边框宽度、线形、颜色*/
+	/*背景颜色*/
+	background-color: rgba(36, 61, 91,0.8);
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 12em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	border-radius: 10px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgba(36, 61, 91,0.3);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	background-color: rgb(0, 85, 200);
+}
+</string>
+                                </property>
+                                <property name="insertPolicy">
+                                 <enum>QComboBox::InsertAtBottom</enum>
+                                </property>
+                                <property name="sizeAdjustPolicy">
+                                 <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                                </property>
+                                <property name="duplicatesEnabled">
+                                 <bool>false</bool>
+                                </property>
+                                <item>
+                                 <property name="text">
+                                  <string>11:00</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>02:00</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>09:00,16:00</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>08:00,17:00</string>
+                                 </property>
+                                </item>
+                               </widget>
+                              </item>
+                              <item>
+                               <spacer name="horizontalSpacer_66">
+                                <property name="orientation">
+                                 <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::Minimum</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                 <size>
+                                  <width>40</width>
+                                  <height>20</height>
+                                 </size>
+                                </property>
+                               </spacer>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="feedingTimeBox_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>60</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                                </property>
+                                <property name="text">
+                                 <string>点击修改</string>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_17">
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>50</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">font: 18pt &quot;楷体&quot;;
+color: rgb(122, 175, 227);</string>
+                             </property>
+                             <property name="text">
+                              <string>自动投喂定量设置</string>
+                             </property>
+                             <property name="alignment">
+                              <set>Qt::AlignCenter</set>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QWidget" name="widget_25" native="true">
+                             <layout class="QHBoxLayout" name="horizontalLayout_37">
+                              <property name="spacing">
+                               <number>0</number>
+                              </property>
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <item>
+                               <spacer name="horizontalSpacer_63">
+                                <property name="orientation">
+                                 <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                 <size>
+                                  <width>40</width>
+                                  <height>20</height>
+                                 </size>
+                                </property>
+                               </spacer>
+                              </item>
+                              <item>
+                               <widget class="QComboBox" name="feedingCountBox">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>466</width>
+                                  <height>80</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>500</width>
+                                  <height>80</height>
+                                 </size>
+                                </property>
+                                <property name="layoutDirection">
+                                 <enum>Qt::LeftToRight</enum>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">/*QCombobox主体*/
+QComboBox {
+	font: 30pt &quot;楷体&quot;;
+	font-weight:bold;
+	color: rgb(122, 175, 227);
+    border: 2px solid rgb(122,175,227);/*设置线宽*/
+	background-color: rgb(27, 49, 73);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(122,175,227);/*边框颜色*/
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow::on {
+	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+	font: 13pt &quot;楷体&quot;;
+    border: 2px solid rgb(202, 221, 245);/*边框宽度、线形、颜色*/
+	/*背景颜色*/
+	background-color: rgba(36, 61, 91,0.8);
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 12em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	border-radius: 10px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgba(36, 61, 91,0.3);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	background-color: rgb(0, 85, 200);
+}
+</string>
+                                </property>
+                                <property name="insertPolicy">
+                                 <enum>QComboBox::InsertAtBottom</enum>
+                                </property>
+                                <property name="sizeAdjustPolicy">
+                                 <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                                </property>
+                                <property name="duplicatesEnabled">
+                                 <bool>false</bool>
+                                </property>
+                                <item>
+                                 <property name="text">
+                                  <string>投喂占比1%</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>投喂占比2%</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>投喂占比2.5%</string>
+                                 </property>
+                                </item>
+                                <item>
+                                 <property name="text">
+                                  <string>投喂占比3%</string>
+                                 </property>
+                                </item>
+                               </widget>
+                              </item>
+                              <item>
+                               <spacer name="horizontalSpacer_64">
+                                <property name="orientation">
+                                 <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::Minimum</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                 <size>
+                                  <width>40</width>
+                                  <height>20</height>
+                                 </size>
+                                </property>
+                               </spacer>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="feedingCountBox_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>60</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                                </property>
+                                <property name="text">
+                                 <string>点击修改</string>
+                                </property>
+                               </widget>
                               </item>
                              </layout>
                             </widget>
@@ -3326,7 +3005,7 @@ color:white;
                             <rect>
                              <x>20</x>
                              <y>20</y>
-                             <width>150</width>
+                             <width>250</width>
                              <height>90</height>
                             </rect>
                            </property>
@@ -3416,7 +3095,7 @@ color:white;
                             <rect>
                              <x>20</x>
                              <y>20</y>
-                             <width>150</width>
+                             <width>250</width>
                              <height>90</height>
                             </rect>
                            </property>
@@ -3506,7 +3185,7 @@ color:white;
                             <rect>
                              <x>20</x>
                              <y>20</y>
-                             <width>150</width>
+                             <width>250</width>
                              <height>90</height>
                             </rect>
                            </property>
@@ -3739,13 +3418,13 @@ color: rgb(122, 175, 227);
                                <widget class="QSpinBox" name="TWKZ_TWnumValue_2">
                                 <property name="minimumSize">
                                  <size>
-                                  <width>220</width>
-                                  <height>50</height>
+                                  <width>300</width>
+                                  <height>80</height>
                                  </size>
                                 </property>
                                 <property name="maximumSize">
                                  <size>
-                                  <width>220</width>
+                                  <width>300</width>
                                   <height>16777215</height>
                                  </size>
                                 </property>
@@ -3754,7 +3433,7 @@ color: rgb(122, 175, 227);
 {	
 border-radius:8px;
 border:2px solid;
-font: 30pt &quot;楷体&quot;;
+font: 48pt &quot;楷体&quot;;
 font-weight:bold;
 color: rgb(122, 175, 227);
 background-color: rgb(36, 61, 91);
@@ -3818,6 +3497,56 @@ QSpinBox::down-button {
                                </widget>
                               </item>
                               <item>
+                               <spacer name="horizontalSpacer_46">
+                                <property name="orientation">
+                                 <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::Minimum</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                 <size>
+                                  <width>40</width>
+                                  <height>20</height>
+                                 </size>
+                                </property>
+                               </spacer>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="TWKZ_btnTWnum_2">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>60</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>60</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                                </property>
+                                <property name="text">
+                                 <string>点击修改</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
                                <spacer name="horizontalSpacer_36">
                                 <property name="orientation">
                                  <enum>Qt::Horizontal</enum>
@@ -3861,40 +3590,6 @@ QSpinBox::down-button {
                                  </size>
                                 </property>
                                </spacer>
-                              </item>
-                              <item>
-                               <widget class="QPushButton" name="TWKZ_btnTWnum_2">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>240</width>
-                                  <height>50</height>
-                                 </size>
-                                </property>
-                                <property name="maximumSize">
-                                 <size>
-                                  <width>240</width>
-                                  <height>16777215</height>
-                                 </size>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">QPushButton
-{
-background-color: rgb(36,61,91);
-color: rgb(122, 175, 227);
-font: 14pt &quot;楷体&quot;;
-border-radius:8px;
-border:2px solid rgb(13,39,67);
-}
-QPushButton:hover
-{
-border:2px solid rgb(122, 175, 227);
-font: 16pt &quot;楷体&quot;;
-}</string>
-                                </property>
-                                <property name="text">
-                                 <string>点击修改</string>
-                                </property>
-                               </widget>
                               </item>
                               <item>
                                <spacer name="horizontalSpacer_34">
@@ -4117,7 +3812,7 @@ color:white;
                             <rect>
                              <x>20</x>
                              <y>20</y>
-                             <width>170</width>
+                             <width>250</width>
                              <height>90</height>
                             </rect>
                            </property>
@@ -4207,7 +3902,7 @@ color:white;
                             <rect>
                              <x>20</x>
                              <y>20</y>
-                             <width>170</width>
+                             <width>250</width>
                              <height>90</height>
                             </rect>
                            </property>
@@ -4527,17 +4222,17 @@ color: rgb(122, 175, 227);
                                </spacer>
                               </item>
                               <item>
-                               <widget class="QComboBox" name="comboBox">
+                               <widget class="QComboBox" name="SuLvBox">
                                 <property name="minimumSize">
                                  <size>
-                                  <width>400</width>
-                                  <height>65</height>
+                                  <width>466</width>
+                                  <height>80</height>
                                  </size>
                                 </property>
                                 <property name="maximumSize">
                                  <size>
-                                  <width>400</width>
-                                  <height>65</height>
+                                  <width>500</width>
+                                  <height>80</height>
                                  </size>
                                 </property>
                                 <property name="layoutDirection">
@@ -4660,6 +4355,9 @@ QComboBox QAbstractItemView::item:selected {
                                 <property name="orientation">
                                  <enum>Qt::Horizontal</enum>
                                 </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::Minimum</enum>
+                                </property>
                                 <property name="sizeHint" stdset="0">
                                  <size>
                                   <width>40</width>
@@ -4667,6 +4365,40 @@ QComboBox QAbstractItemView::item:selected {
                                  </size>
                                 </property>
                                </spacer>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="SuLvBox_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>60</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>200</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                                </property>
+                                <property name="text">
+                                 <string>点击修改</string>
+                                </property>
+                               </widget>
                               </item>
                              </layout>
                             </widget>
@@ -4699,40 +4431,6 @@ QComboBox QAbstractItemView::item:selected {
                                  </size>
                                 </property>
                                </spacer>
-                              </item>
-                              <item>
-                               <widget class="QPushButton" name="TWKZ_btnTWnum_3">
-                                <property name="minimumSize">
-                                 <size>
-                                  <width>240</width>
-                                  <height>50</height>
-                                 </size>
-                                </property>
-                                <property name="maximumSize">
-                                 <size>
-                                  <width>240</width>
-                                  <height>16777215</height>
-                                 </size>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">QPushButton
-{
-background-color: rgb(36,61,91);
-color: rgb(122, 175, 227);
-font: 14pt &quot;楷体&quot;;
-border-radius:8px;
-border:2px solid rgb(13,39,67);
-}
-QPushButton:hover
-{
-border:2px solid rgb(122, 175, 227);
-font: 16pt &quot;楷体&quot;;
-}</string>
-                                </property>
-                                <property name="text">
-                                 <string>点击修改</string>
-                                </property>
-                               </widget>
                               </item>
                               <item>
                                <spacer name="horizontalSpacer_44">
@@ -4771,9 +4469,1968 @@ font: 16pt &quot;楷体&quot;;
                      </item>
                     </layout>
                    </widget>
-                   <widget class="QWidget" name="HJpage"/>
-                   <widget class="QWidget" name="YQpage"/>
-                   <widget class="QWidget" name="GDpage"/>
+                   <widget class="QWidget" name="HJpage">
+                    <layout class="QHBoxLayout" name="horizontalLayout_26">
+                     <item>
+                      <widget class="QWidget" name="hjLeftWidget" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>400</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>400</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_25">
+                        <property name="spacing">
+                         <number>70</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>20</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>20</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>20</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>20</number>
+                        </property>
+                        <item>
+                         <widget class="QWidget" name="hjAutoWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>360</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+background-color: rgb(62,67,156);
+border-radius:8px;
+}</string>
+                          </property>
+                          <widget class="QLabel" name="hjAutoName">
+                           <property name="geometry">
+                            <rect>
+                             <x>10</x>
+                             <y>108</y>
+                             <width>170</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 18pt &quot;楷体&quot; ;
+color:white;
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>自动环境控制</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="hjAutoValue">
+                           <property name="geometry">
+                            <rect>
+                             <x>20</x>
+                             <y>20</y>
+                             <width>150</width>
+                             <height>90</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 48pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>OFF</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="hjAutoUnit">
+                           <property name="geometry">
+                            <rect>
+                             <x>270</x>
+                             <y>115</y>
+                             <width>90</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 16pt &quot;楷体&quot;;
+color: rgb(166,173,232);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>on/off</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="dyWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>360</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+background-color: rgb(62,67,156);
+border-radius:8px;
+}</string>
+                          </property>
+                          <widget class="QLabel" name="dyName">
+                           <property name="geometry">
+                            <rect>
+                             <x>10</x>
+                             <y>108</y>
+                             <width>130</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 18pt &quot;楷体&quot; ;
+color:white;
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>电源模式</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="dyValue">
+                           <property name="geometry">
+                            <rect>
+                             <x>20</x>
+                             <y>20</y>
+                             <width>260</width>
+                             <height>90</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 36pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>外部电源</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="dyUnit">
+                           <property name="geometry">
+                            <rect>
+                             <x>230</x>
+                             <y>110</y>
+                             <width>120</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 16pt &quot;楷体&quot;;
+color: rgb(166,173,232);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>外/内/太</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="txWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>360</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+background-color: rgb(62,67,156);
+border-radius:8px;
+}</string>
+                          </property>
+                          <widget class="QLabel" name="txName">
+                           <property name="geometry">
+                            <rect>
+                             <x>10</x>
+                             <y>108</y>
+                             <width>140</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 18pt &quot;楷体&quot; ;
+color:white;
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>通信模式</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="txValue">
+                           <property name="geometry">
+                            <rect>
+                             <x>20</x>
+                             <y>20</y>
+                             <width>220</width>
+                             <height>90</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 36pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>LORA</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="txUnit">
+                           <property name="geometry">
+                            <rect>
+                             <x>250</x>
+                             <y>110</y>
+                             <width>110</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 16pt &quot;楷体&quot;;
+color: rgb(166,173,232);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>L/Z/5/W</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QWidget" name="hjRightWidget" native="true">
+                       <layout class="QVBoxLayout" name="verticalLayout_26">
+                        <item>
+                         <widget class="QWidget" name="widget_17" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_27">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>30</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <spacer name="horizontalSpacer_41">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>159</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="SlideButtonLib" name="btn_HJAuto" native="true">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QWidget
+{
+color: rgb(122, 175, 227);
+font-weight:bold;
+}</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_45">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>159</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_12">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 18pt &quot;楷体&quot;;
+color: rgb(122, 175, 227);</string>
+                          </property>
+                          <property name="text">
+                           <string>水质系统电源模式设置</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="widget_18" native="true">
+                          <layout class="QHBoxLayout" name="horizontalLayout_29">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <spacer name="horizontalSpacer_49">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QComboBox" name="dyBox">
+                             <property name="minimumSize">
+                              <size>
+                               <width>466</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>500</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="layoutDirection">
+                              <enum>Qt::LeftToRight</enum>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">/*QCombobox主体*/
+QComboBox {
+	font: 30pt &quot;楷体&quot;;
+	font-weight:bold;
+	color: rgb(122, 175, 227);
+    border: 2px solid rgb(122,175,227);/*设置线宽*/
+	background-color: rgb(27, 49, 73);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(122,175,227);/*边框颜色*/
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow::on {
+	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+	font: 13pt &quot;楷体&quot;;
+    border: 2px solid rgb(202, 221, 245);/*边框宽度、线形、颜色*/
+	/*背景颜色*/
+	background-color: rgba(36, 61, 91,0.8);
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 12em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	border-radius: 10px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgba(36, 61, 91,0.3);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	background-color: rgb(0, 85, 200);
+}
+</string>
+                             </property>
+                             <property name="insertPolicy">
+                              <enum>QComboBox::InsertAtBottom</enum>
+                             </property>
+                             <property name="sizeAdjustPolicy">
+                              <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                             </property>
+                             <property name="duplicatesEnabled">
+                              <bool>false</bool>
+                             </property>
+                             <item>
+                              <property name="text">
+                               <string>外部电源</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>内部电池</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>太阳能电池</string>
+                              </property>
+                             </item>
+                            </widget>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_50">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeType">
+                              <enum>QSizePolicy::Minimum</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="dyBox_btn">
+                             <property name="minimumSize">
+                              <size>
+                               <width>200</width>
+                               <height>60</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>200</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                             </property>
+                             <property name="text">
+                              <string>点击修改</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_13">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 18pt &quot;楷体&quot;;
+color: rgb(122, 175, 227);</string>
+                          </property>
+                          <property name="text">
+                           <string>水质系统通信模式设置</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="widget_19" native="true">
+                          <layout class="QHBoxLayout" name="horizontalLayout_30">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <spacer name="horizontalSpacer_51">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QComboBox" name="txBox">
+                             <property name="minimumSize">
+                              <size>
+                               <width>466</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>500</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="layoutDirection">
+                              <enum>Qt::LeftToRight</enum>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">/*QCombobox主体*/
+QComboBox {
+	font: 30pt &quot;楷体&quot;;
+	font-weight:bold;
+	color: rgb(122, 175, 227);
+    border: 2px solid rgb(122,175,227);/*设置线宽*/
+	background-color: rgb(27, 49, 73);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(122,175,227);/*边框颜色*/
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow::on {
+	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+	font: 13pt &quot;楷体&quot;;
+    border: 2px solid rgb(202, 221, 245);/*边框宽度、线形、颜色*/
+	/*背景颜色*/
+	background-color: rgba(36, 61, 91,0.8);
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 12em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	border-radius: 10px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgba(36, 61, 91,0.3);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	background-color: rgb(0, 85, 200);
+}
+</string>
+                             </property>
+                             <property name="insertPolicy">
+                              <enum>QComboBox::InsertAtBottom</enum>
+                             </property>
+                             <property name="sizeAdjustPolicy">
+                              <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                             </property>
+                             <property name="duplicatesEnabled">
+                              <bool>false</bool>
+                             </property>
+                             <item>
+                              <property name="text">
+                               <string>LORA</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>ZIGBEE</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>5G</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>WIFI</string>
+                              </property>
+                             </item>
+                            </widget>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_52">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeType">
+                              <enum>QSizePolicy::Minimum</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="txBox_btn">
+                             <property name="minimumSize">
+                              <size>
+                               <width>200</width>
+                               <height>60</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>200</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                             </property>
+                             <property name="text">
+                              <string>点击修改</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="YQpage">
+                    <layout class="QHBoxLayout" name="horizontalLayout_34">
+                     <item>
+                      <widget class="QWidget" name="hjLeftWidget_2" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>400</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>400</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_27">
+                        <property name="spacing">
+                         <number>70</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>20</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>20</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>20</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>20</number>
+                        </property>
+                        <item>
+                         <widget class="QWidget" name="O2AutoWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>360</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+background-color: rgb(62,67,156);
+border-radius:8px;
+}</string>
+                          </property>
+                          <widget class="QLabel" name="O2AutoName">
+                           <property name="geometry">
+                            <rect>
+                             <x>10</x>
+                             <y>130</y>
+                             <width>170</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 18pt &quot;楷体&quot; ;
+color:white;
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>自动氧气控制</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="O2AutoValue">
+                           <property name="geometry">
+                            <rect>
+                             <x>20</x>
+                             <y>20</y>
+                             <width>150</width>
+                             <height>90</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 48pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>OFF</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="O2AutoUnit">
+                           <property name="geometry">
+                            <rect>
+                             <x>270</x>
+                             <y>133</y>
+                             <width>90</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 16pt &quot;楷体&quot;;
+color: rgb(166,173,232);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>on/off</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="O2TimeWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>360</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+background-color: rgb(62,67,156);
+border-radius:8px;
+}</string>
+                          </property>
+                          <widget class="QLabel" name="O2TimeName">
+                           <property name="geometry">
+                            <rect>
+                             <x>10</x>
+                             <y>130</y>
+                             <width>130</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 18pt &quot;楷体&quot; ;
+color:white;
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>定时设置</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="O2TimeValue">
+                           <property name="geometry">
+                            <rect>
+                             <x>20</x>
+                             <y>20</y>
+                             <width>310</width>
+                             <height>90</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 36pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>充氧0.5小时</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="O2TimeUnit">
+                           <property name="geometry">
+                            <rect>
+                             <x>190</x>
+                             <y>130</y>
+                             <width>170</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 16pt &quot;楷体&quot;;
+color: rgb(166,173,232);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>0.5/1/1.5/2</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="O2NumWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>360</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+background-color: rgb(62,67,156);
+border-radius:8px;
+}</string>
+                          </property>
+                          <widget class="QLabel" name="O2NumName">
+                           <property name="geometry">
+                            <rect>
+                             <x>10</x>
+                             <y>128</y>
+                             <width>140</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 18pt &quot;楷体&quot; ;
+color:white;
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>定次设置</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="O2NumValue">
+                           <property name="geometry">
+                            <rect>
+                             <x>20</x>
+                             <y>20</y>
+                             <width>230</width>
+                             <height>90</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 36pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>一天一次</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="O2NumUnit">
+                           <property name="geometry">
+                            <rect>
+                             <x>240</x>
+                             <y>130</y>
+                             <width>110</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 16pt &quot;楷体&quot;;
+color: rgb(166,173,232);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>1/2/3/4</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QWidget" name="hjRightWidget_2" native="true">
+                       <layout class="QVBoxLayout" name="verticalLayout_28">
+                        <item>
+                         <widget class="QWidget" name="widget_20" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>150</height>
+                           </size>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_31">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>30</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <spacer name="horizontalSpacer_53">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>159</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="SlideButtonLib" name="btn_O2Auto" native="true">
+                             <property name="minimumSize">
+                              <size>
+                               <width>300</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>300</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QWidget
+{
+color: rgb(122, 175, 227);
+font-weight:bold;
+}</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_54">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>159</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_14">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 18pt &quot;楷体&quot;;
+color: rgb(122, 175, 227);</string>
+                          </property>
+                          <property name="text">
+                           <string>自动供氧定时设置</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="widget_21" native="true">
+                          <layout class="QHBoxLayout" name="horizontalLayout_32">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <spacer name="horizontalSpacer_55">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QComboBox" name="O2TimeBox">
+                             <property name="minimumSize">
+                              <size>
+                               <width>466</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>500</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="layoutDirection">
+                              <enum>Qt::LeftToRight</enum>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">/*QCombobox主体*/
+QComboBox {
+	font: 30pt &quot;楷体&quot;;
+	font-weight:bold;
+	color: rgb(122, 175, 227);
+    border: 2px solid rgb(122,175,227);/*设置线宽*/
+	background-color: rgb(27, 49, 73);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(122,175,227);/*边框颜色*/
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow::on {
+	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+	font: 13pt &quot;楷体&quot;;
+    border: 2px solid rgb(202, 221, 245);/*边框宽度、线形、颜色*/
+	/*背景颜色*/
+	background-color: rgba(36, 61, 91,0.8);
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 12em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	border-radius: 10px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgba(36, 61, 91,0.3);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	background-color: rgb(0, 85, 200);
+}
+</string>
+                             </property>
+                             <property name="insertPolicy">
+                              <enum>QComboBox::InsertAtBottom</enum>
+                             </property>
+                             <property name="sizeAdjustPolicy">
+                              <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                             </property>
+                             <property name="duplicatesEnabled">
+                              <bool>false</bool>
+                             </property>
+                             <item>
+                              <property name="text">
+                               <string>充氧0.5小时</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>充氧1小时</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>充氧1.5小时</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>充氧2小时</string>
+                              </property>
+                             </item>
+                            </widget>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_56">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeType">
+                              <enum>QSizePolicy::Minimum</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="O2TimeBox_btn">
+                             <property name="minimumSize">
+                              <size>
+                               <width>200</width>
+                               <height>60</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>200</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                             </property>
+                             <property name="text">
+                              <string>点击修改</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QLabel" name="label_15">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: 18pt &quot;楷体&quot;;
+color: rgb(122, 175, 227);</string>
+                          </property>
+                          <property name="text">
+                           <string>自动供氧定次设置</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="widget_22" native="true">
+                          <layout class="QHBoxLayout" name="horizontalLayout_33">
+                           <property name="spacing">
+                            <number>0</number>
+                           </property>
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <spacer name="horizontalSpacer_57">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QComboBox" name="O2NumBox">
+                             <property name="minimumSize">
+                              <size>
+                               <width>466</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>500</width>
+                               <height>80</height>
+                              </size>
+                             </property>
+                             <property name="layoutDirection">
+                              <enum>Qt::LeftToRight</enum>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">/*QCombobox主体*/
+QComboBox {
+	font: 30pt &quot;楷体&quot;;
+	font-weight:bold;
+	color: rgb(122, 175, 227);
+    border: 2px solid rgb(122,175,227);/*设置线宽*/
+	background-color: rgb(27, 49, 73);/*背景颜色*/
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+	text-align:bottom;
+    min-width: 9em;   /*# 组合框的最小宽度*/
+    /*min-height: 5em;*/
+	border-style:solid;/*边框为实线型*/
+	border-width:2px;/*边框宽度*/
+	border-color:rgb(122,175,227);/*边框颜色*/
+	padding-left: 10px;/*左侧边距*/
+}
+/*QCombobox右侧按钮*/
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;/*放于右方顶部*/
+    width: 50px;/*设置按钮范围宽度*/
+    border-top-right-radius: 3px;/*设置边框圆角*/
+    border-bottom-right-radius: 3px;
+/*padding-right: 50px;*/
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow {
+	border-image: url(:/ptr/downJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+/*QCombobox右侧按钮的箭头图标*/
+QComboBox::down-arrow::on {
+	border-image: url(:/ptr/upJT.png);/*自定义图片填充*/
+	width: 18px;/*设置该图标的宽高*/
+	height: 18px;
+}
+
+
+/* 下拉后，整个下拉窗体样式 */
+QComboBox QAbstractItemView {
+	font: 13pt &quot;楷体&quot;;
+    border: 2px solid rgb(202, 221, 245);/*边框宽度、线形、颜色*/
+	/*背景颜色*/
+	background-color: rgba(36, 61, 91,0.8);
+    border-radius: 10px;/*圆角*/
+    padding: 1px 2px 1px 2px;  /*针对于组合框中的文本内容*/
+    min-width: 12em;   /*# 组合框的最小宽度*/
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	border-radius: 10px;/*圆角*/
+    height: 30px;   /* 项的高度（设置pComboBox-&gt;setView(new QListView());后，该项才起作用） */
+	background-color: rgba(36, 61, 91,0.3);
+
+}
+
+/*以下部分不知为何不生效，有待调试*/
+/* 下拉后，整个下拉窗体越过每项的样式 */
+QComboBox QAbstractItemView::item:hover {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+       /* 整个下拉窗体越过每项的背景色 */
+	background-color: rgb(98, 0, 255);
+}
+
+/* 下拉后，整个下拉窗体被选择的每项的样式 */
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	font: 13pt &quot;楷体&quot;;
+	color: rgb(122, 175, 227);
+	background-color: rgb(0, 85, 200);
+}
+</string>
+                             </property>
+                             <property name="insertPolicy">
+                              <enum>QComboBox::InsertAtBottom</enum>
+                             </property>
+                             <property name="sizeAdjustPolicy">
+                              <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                             </property>
+                             <property name="duplicatesEnabled">
+                              <bool>false</bool>
+                             </property>
+                             <item>
+                              <property name="text">
+                               <string>一天一次</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>一天两次</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>一天三次</string>
+                              </property>
+                             </item>
+                             <item>
+                              <property name="text">
+                               <string>两天三次</string>
+                              </property>
+                             </item>
+                            </widget>
+                           </item>
+                           <item>
+                            <spacer name="horizontalSpacer_58">
+                             <property name="orientation">
+                              <enum>Qt::Horizontal</enum>
+                             </property>
+                             <property name="sizeType">
+                              <enum>QSizePolicy::Minimum</enum>
+                             </property>
+                             <property name="sizeHint" stdset="0">
+                              <size>
+                               <width>40</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                            </spacer>
+                           </item>
+                           <item>
+                            <widget class="QPushButton" name="O2NumBox_btn">
+                             <property name="minimumSize">
+                              <size>
+                               <width>200</width>
+                               <height>60</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>200</width>
+                               <height>16777215</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">QPushButton
+{
+background-color: rgb(36,61,91);
+color: rgb(122, 175, 227);
+font: 14pt &quot;楷体&quot;;
+border-radius:8px;
+border:2px solid rgb(13,39,67);
+}
+QPushButton:hover
+{
+border:2px solid rgb(122, 175, 227);
+font: 16pt &quot;楷体&quot;;
+}</string>
+                             </property>
+                             <property name="text">
+                              <string>点击修改</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                   <widget class="QWidget" name="GDpage">
+                    <layout class="QVBoxLayout" name="verticalLayout_29">
+                     <item>
+                      <widget class="QWidget" name="widget_23" native="true">
+                       <layout class="QHBoxLayout" name="horizontalLayout_35">
+                        <item>
+                         <spacer name="horizontalSpacer_59">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>43</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QWidget" name="tynAutoWidget" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>900</width>
+                            <height>350</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>1000</width>
+                            <height>350</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+background-color: rgb(62,67,156);
+border-radius:8px;
+}</string>
+                          </property>
+                          <widget class="QLabel" name="tynAutoName">
+                           <property name="geometry">
+                            <rect>
+                             <x>10</x>
+                             <y>220</y>
+                             <width>670</width>
+                             <height>110</height>
+                            </rect>
+                           </property>
+                           <property name="autoFillBackground">
+                            <bool>false</bool>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 58pt &quot;楷体&quot; ;
+color:white;
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>太阳能运行控制</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="tynAutoValue">
+                           <property name="geometry">
+                            <rect>
+                             <x>20</x>
+                             <y>20</y>
+                             <width>450</width>
+                             <height>180</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 100pt &quot;楷体&quot;;
+color: rgb(255, 255, 255);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>OFF</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="tynAutoUnit">
+                           <property name="geometry">
+                            <rect>
+                             <x>710</x>
+                             <y>270</y>
+                             <width>150</width>
+                             <height>40</height>
+                            </rect>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLabel
+{
+font: 26pt &quot;楷体&quot;;
+color: rgb(166,173,232);
+}</string>
+                           </property>
+                           <property name="text">
+                            <string>on/off</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                          <widget class="QLabel" name="tynAutoLogo">
+                           <property name="geometry">
+                            <rect>
+                             <x>660</x>
+                             <y>20</y>
+                             <width>200</width>
+                             <height>200</height>
+                            </rect>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>200</width>
+                             <height>200</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>200</width>
+                             <height>200</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">border-image: url(:/ptr/NOtype.png);</string>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_60">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>42</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QWidget" name="widget_24" native="true">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>300</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>16777215</width>
+                         <height>300</height>
+                        </size>
+                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_36">
+                        <property name="spacing">
+                         <number>0</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>30</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <spacer name="horizontalSpacer_61">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>159</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="SlideButtonLib" name="btn_TYNAuto" native="true">
+                          <property name="minimumSize">
+                           <size>
+                            <width>700</width>
+                            <height>200</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>700</width>
+                            <height>200</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QWidget
+{
+color: rgb(122, 175, 227);
+font-weight:bold;
+}</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_62">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>159</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
                   </widget>
                  </item>
                 </layout>

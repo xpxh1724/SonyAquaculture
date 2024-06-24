@@ -27,11 +27,18 @@ void MainWindow::init()
     setWindowFlags(Qt::FramelessWindowHint);//设置无系统边框  //Qt::WindowStaysOnTopHint窗口最高权限-窗口始终在最上层
     //this->setAttribute(Qt::WA_TranslucentBackground, true);//设置透明-窗体标题栏不透明,背景透明
     setGeometry(110,30,geometry().width(),geometry().height());//窗口初始显示位置
+
+
     DockWidgetInit();//DockWidget窗口初始化
+
     RealTimePageInit();//RealTimePage页面初始化
+
     RecordQueryPageInit();//RecordQueryPage页面初始化
+
     ControlPageInit();//ControlPage页面初始化
+
     FaultDetectInit();//FaultDetectPage页面初始化
+
     ui->stackedWidget->setCurrentIndex(0);
     myTcp=new MyTcpSocket;
     connect(myTcp,&MyTcpSocket::connectServerOK,this,[=]{qDebug()<<"m_tcp连接成功"<<endl;
@@ -41,7 +48,13 @@ void MainWindow::init()
     connect(myTcp,&MyTcpSocket::updateData,this,[=](double *Data){
         waterTop->setValue(Data);//更新水上数据
         waterBottom->setValue(Data);//更新水下数据
-        graphData->updateDataSlots(ui->Chart);//数据更新
+        graphData->updateDataSlots(ui->Chart);//图标数据更新
+        //ControlPage页面数据更新
+        ui->tempValue->setText(QString("%1℃").arg(Data[0]));//水上温度
+        ui->tempValue_2->setText(QString("%1℃").arg(Data[9]));//水下温度1
+        ui->tempValue_4->setText(QString("%1℃").arg(Data[10]));//水下温度2
+        ui->waterlevel1Value->setText(QString("%1cm").arg(Data[11]));//水下水位1
+        ui->waterlevel2Value->setText(QString("%1cm").arg(Data[12]));//水下水位2
     });
 
     //监测硬件、PC与服务器间连接状态
@@ -580,6 +593,21 @@ void MainWindow::ControlPageInit()
                 systemState->setStateFeeding("已开启");
             }
         });
+        //定次设置
+        connect(ui->feedingNumBox_btn,&QPushButton::clicked,this,[=]{
+            if(ui->feedingNumBox->currentText()=="一天一次"||ui->feedingNumBox->currentText()=="两天一次")
+            {
+                ui->feedingValue->setText("0/1");
+            }
+            else
+            {
+                ui->feedingValue->setText("0/2");
+            }
+        });
+        //定量设置
+        connect(ui->feedingCountBox_btn,&QPushButton::clicked,this,[=]{
+          ui->feedingWeightValue->setText(ui->feedingCountBox->currentText().split("占比").at(1));
+        });
     }
     //============== 温度控制 ==============
     {
@@ -603,7 +631,7 @@ void MainWindow::ControlPageInit()
     {
         ui->btn_WaterlevelAuto->setOnBgBrush(QColor(36,61,91));
         ui->btn_WaterlevelAuto->setOffBgBrush(QColor(36,61,91));
-        //自动温度是否开启按钮
+        //自动水位是否开启按钮
         connect(ui->btn_WaterlevelAuto,&SlideButtonLib::isOffValueState,this,[=](bool isOff){
             if(isOff)
             {
@@ -616,11 +644,79 @@ void MainWindow::ControlPageInit()
                 systemState->setStateWaterLevel("已开启");
             }
         });
+        connect(ui->SuLvBox_btn,&QPushButton::clicked,this,[=]{
+            ui->waterflowValue->setText(ui->SuLvBox->currentText());
+        });
     }
     //============== 环境控制 ==============
-    {}
+    {
+        ui->btn_HJAuto->setOnBgBrush(QColor(36,61,91));
+        ui->btn_HJAuto->setOffBgBrush(QColor(36,61,91));
+        //自动环境是否开启按钮
+        connect(ui->btn_HJAuto,&SlideButtonLib::isOffValueState,this,[=](bool isOff){
+            if(isOff)
+            {
+                ui->hjAutoValue->setText("OFF");
+            }
+            else
+            {
+                ui->hjAutoValue->setText("ON");
+            }
+        });
+        //电源供电设置
+        connect(ui->dyBox_btn,&QPushButton::clicked,this,[=]{
+            ui->dyValue->setText(ui->dyBox->currentText());
+            systemState->setStateDianYuan(ui->dyBox->currentText());
+        });
+        //通信模式设置
+        connect(ui->txBox_btn,&QPushButton::clicked,this,[=]{
+            ui->txValue->setText(ui->txBox->currentText());
+        });
+    }
     //============== 氧气控制 ==============
-    {}
+    {
+        ui->btn_O2Auto->setOnBgBrush(QColor(36,61,91));
+        ui->btn_O2Auto->setOffBgBrush(QColor(36,61,91));
+        //自动氧气是否开启按钮
+        connect(ui->btn_O2Auto,&SlideButtonLib::isOffValueState,this,[=](bool isOff){
+            if(isOff)
+            {
+                ui->O2AutoValue->setText("OFF");
+                systemState->setStateYangQi("未开启");
+            }
+            else
+            {
+                ui->O2AutoValue->setText("ON");
+                systemState->setStateYangQi("已开启");
+            }
+        });
+        //氧气定时设置
+        connect(ui->O2TimeBox_btn,&QPushButton::clicked,this,[=]{
+            ui->O2TimeValue->setText(ui->O2TimeBox->currentText());
+        });
+        //氧气定次设置
+        connect(ui->O2NumBox_btn,&QPushButton::clicked,this,[=]{
+            ui->O2NumValue->setText(ui->O2NumBox->currentText());
+        });
+    }
+    //============== 电池控制 ==============
+    {
+        ui->btn_TYNAuto->setOnBgBrush(QColor(36,61,91));
+        ui->btn_TYNAuto->setOffBgBrush(QColor(36,61,91));
+        //太阳能功能是否开启按钮
+        connect(ui->btn_TYNAuto,&SlideButtonLib::isOffValueState,this,[=](bool isOff){
+            if(isOff)
+            {
+                ui->tynAutoValue->setText("OFF");
+                ui->tynAutoLogo->setStyleSheet("border-image: url(:/ptr/NOtype.png);");
+            }
+            else
+            {
+                ui->tynAutoValue->setText("ON");
+                ui->tynAutoLogo->setStyleSheet("border-image: url(:/ptr/OKtype.png);");
+            }
+        });
+    }
 
 }
 //FaultDetect页面初始化

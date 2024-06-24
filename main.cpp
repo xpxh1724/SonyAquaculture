@@ -5,9 +5,12 @@
 #include<QSqlError>
 int main(int argc, char *argv[])
 {
-#if (QT_VERSION >= QT_VERSION_CHECK(5,6,0))
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    //设置高分屏属性以便支持2K4K等高分辨率，尤其是手机app。必须写在main函数的QApplication a(argc, argv);的前面。
+    //永远不应用高分屏及缩放
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0))
+    QApplication::setAttribute(Qt::AA_Use96Dpi);
+#endif
+#if (QT_VERSION >= QT_VERSION_CHECK(5,14,0))
+    QApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::Floor);
 #endif
     QApplication a(argc, argv);
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
