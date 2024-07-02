@@ -25,10 +25,25 @@ MyTcpSocket::MyTcpSocket()
         // 接收服务器发送的数据
         QByteArray recvMsg = m_tcp->readAll();
         QString msg=QString::fromUtf8(recvMsg);
-        for (int i=0;i<13;i++) {
-            Data[i]=msg.split(',').at(i).toDouble();
+        QStringList sj=msg.split(',');
+        if(sj.count()==13)
+        {
+            for (int i=0;i<13;++i) {
+                Data[i]=sj[i].toDouble();
+            }
+            emit updateData(Data);
         }
-        emit updateData(Data);
+        else if (sj.count()==14) {
+            for (int i=0;i<13;++i) {
+                Data[i]=sj[i].toDouble();
+            }
+            emit updateData(Data);
+            emit updateFaultdetectAutoFeedingType(sj[13].toInt());
+        }
+        else {
+            qDebug()<<"接收数据错误！！！！！";
+        }
+
     });
 
     // 检测服务器是否和客户端断开了连接

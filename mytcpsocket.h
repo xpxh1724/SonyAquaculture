@@ -14,6 +14,7 @@ public:
 signals:
     void connectServerOK();
     void updateData(double*Data);
+    void updateFaultdetectAutoFeedingType(int);
 private:
     QTcpSocket *m_tcp;
     double Data[13];

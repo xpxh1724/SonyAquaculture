@@ -54,7 +54,7 @@ void Log::appendLog(QString msg)
 {
     //获取总行数
     int RowCount=ui->tableWidget->rowCount();
-    qDebug()<<"总行数："<<RowCount<<endl;
+//    qDebug()<<"总行数："<<RowCount<<endl;
     QString nowTime=QDateTime::currentDateTime().toString("hh:mm:ss");
     if(logRowCount>RowCount)
     {

@@ -48,13 +48,17 @@ void MainWindow::init()
     connect(myTcp,&MyTcpSocket::updateData,this,[=](double *Data){
         waterTop->setValue(Data);//更新水上数据
         waterBottom->setValue(Data);//更新水下数据
-        graphData->updateDataSlots(ui->Chart);//图标数据更新
+        graphData->updateDataSlots(ui->Chart);//图表数据更新
         //ControlPage页面数据更新
         ui->tempValue->setText(QString("%1℃").arg(Data[0]));//水上温度
         ui->tempValue_2->setText(QString("%1℃").arg(Data[9]));//水下温度1
         ui->tempValue_4->setText(QString("%1℃").arg(Data[10]));//水下温度2
         ui->waterlevel1Value->setText(QString("%1cm").arg(Data[11]));//水下水位1
         ui->waterlevel2Value->setText(QString("%1cm").arg(Data[12]));//水下水位2
+    });
+    //故障检测-投喂控制台模块状态
+    connect(myTcp,&MyTcpSocket::updateFaultdetectAutoFeedingType,this,[=](int FeedingType){
+       myFaultDetect->setTWKZmodelType(FeedingType);
     });
 
     //监测硬件、PC与服务器间连接状态
@@ -606,7 +610,7 @@ void MainWindow::ControlPageInit()
         });
         //定量设置
         connect(ui->feedingCountBox_btn,&QPushButton::clicked,this,[=]{
-          ui->feedingWeightValue->setText(ui->feedingCountBox->currentText().split("占比").at(1));
+            ui->feedingWeightValue->setText(ui->feedingCountBox->currentText().split("占比").at(1));
         });
     }
     //============== 温度控制 ==============
@@ -722,7 +726,7 @@ void MainWindow::ControlPageInit()
 //FaultDetect页面初始化
 void MainWindow::FaultDetectInit()
 {
-    FaultDetect *myFaultDetect=new FaultDetect;
+    myFaultDetect=new FaultDetect;
     // 设置myFaultDetect的大小策略为扩展，以便它可以调整大小
     myFaultDetect->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -738,7 +742,4 @@ void MainWindow::FaultDetectInit()
     }
     // 设置BottomWidget4的布局
     ui->BottomWidget4->setLayout(layout);
-
-
-
 }

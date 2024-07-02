@@ -79,6 +79,9 @@ private:
     MyTcpSocket *myTcp;
     //------子线程类---------
 
+    //------模块状态类-------
+    FaultDetect *myFaultDetect;
+
 
 
 };

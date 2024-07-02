@@ -55,6 +55,20 @@ QPoint FaultDetect::getPosition(QWidget *widget,int x,int y)
     return this->parentWidget()->mapFromGlobal(widget->parentWidget()->mapToGlobal(centerPoint));
 }
 
+void FaultDetect::setTWKZmodelType(int type)
+{
+    if(type==1)
+    {
+        ui->TWKZTmodule->setColorType("绿色");
+        TWKZtype=1;
+    }
+    else if(type==0)
+    {
+        ui->TWKZTmodule->setColorType("红色");
+        TWKZtype=0;
+    }
+}
+
 
 void FaultDetect::paintEvent(QPaintEvent *event)
 {
@@ -144,8 +158,8 @@ void FaultDetect::init()
     ui->autoSZJCmodule->setRectType("中");
     ui->autoSZJCmodule->setColorType("绿色");
     ui->ZYKZmodule->setRectType("中");
-    ui->ZYKZmodule->setColorType("红色");
-    ui->DJLXJmodule->setColorType("红色");
+    ui->ZYKZmodule->setColorType("绿色");
+    ui->DJLXJmodule->setColorType("绿色");
     ui->autoSWKZmodule->setRectType("中");
     ui->autoSWKZmodule->setColorType("绿色");
     ui->autoSWKZmodule_2->setRectType("中");
@@ -154,16 +168,16 @@ void FaultDetect::init()
     ui->autoTWmodule->setColorType("绿色");
     ui->KQHJJCmodule->setRectType("中");
     ui->KQHJJCmodule->setColorType("绿色");
-    ui->WDKZmodule->setColorType("红色");
+    ui->WDKZmodule->setColorType("绿色");
     ui->SDsensor1->setColorType("绿色");
     ui->SDsensor2->setColorType("绿色");
     ui->CSBsensor->setColorType("绿色");
     ui->SWsensor->setColorType("绿色");
-    ui->JSSB->setColorType("红色");
-    ui->CSSB->setColorType("红色");
+    ui->JSSB->setColorType("绿色");
+    ui->CSSB->setColorType("绿色");
     ui->ZLsensor->setColorType("绿色");
-    ui->autoFM->setColorType("红色");
-    ui->TWKZTmodule->setColorType("红色");
+    ui->autoFM->setColorType("绿色");
+    ui->TWKZTmodule->setColorType("绿色");
 
 }
 
@@ -181,12 +195,12 @@ void FaultDetect::faultDetect()
 
     }
     else if (timerCount==3) {
-        ui->ZYKZmodule->setColorType("红色");
+        ui->ZYKZmodule->setColorType("绿色");
         timerCount++;
 
     }
     else if (timerCount==4) {
-        ui->DJLXJmodule->setColorType("红色");
+        ui->DJLXJmodule->setColorType("绿色");
         timerCount++;
 
     }
@@ -217,7 +231,7 @@ void FaultDetect::faultDetect()
     }
     else if (timerCount==10) {
 
-        ui->WDKZmodule->setColorType("红色");
+        ui->WDKZmodule->setColorType("绿色");
         timerCount++;
 
     }
@@ -237,12 +251,12 @@ void FaultDetect::faultDetect()
 
     }
     else if (timerCount==14) {
-        ui->JSSB->setColorType("红色");
+        ui->JSSB->setColorType("绿色");
         timerCount++;
 
     }
     else if (timerCount==15) {
-        ui->CSSB->setColorType("红色");
+        ui->CSSB->setColorType("绿色");
         timerCount++;
 
     }
@@ -252,12 +266,16 @@ void FaultDetect::faultDetect()
 
     }
     else if (timerCount==17) {
-        ui->autoFM->setColorType("红色");
+        ui->autoFM->setColorType("绿色");
         timerCount++;
 
     }
     else if (timerCount==18) {
-        ui->TWKZTmodule->setColorType("红色");
+        //判断
+        if(TWKZtype==1)
+            ui->TWKZTmodule->setColorType("绿色");
+        else if(TWKZtype==0)
+            ui->TWKZTmodule->setColorType("红色");
         timerCount++;
 
     }
