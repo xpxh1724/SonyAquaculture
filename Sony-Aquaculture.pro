@@ -15,7 +15,7 @@ RC_ICONS = logo.ico
 
 DEFINES += QT_DEPRECATED_WARNINGS
 
-CONFIG += c++11 console
+CONFIG += c++11 #console
 
 SOURCES += \
         faultdetect.cpp \

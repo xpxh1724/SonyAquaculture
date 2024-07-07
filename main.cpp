@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 #endif
     QApplication a(argc, argv);
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("49.232.149.245");//主机
+    db.setHostName("localhost");//主机
     db.setPort(3306);//端口号
     db.setDatabaseName("Aquaculture");//数据库名
     db.setUserName("root");//用户名

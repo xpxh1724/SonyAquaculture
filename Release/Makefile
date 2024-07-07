@@ -226,6 +226,7 @@ Makefile: ../Sony-Aquaculture.pro E:/QT/5.12.4/mingw73_64/mkspecs/win32-g++/qmak
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/qt_config.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/win32-g++/qmake.conf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/exclusive_builds.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/toolchain.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/default_pre.prf \
@@ -233,7 +234,6 @@ Makefile: ../Sony-Aquaculture.pro E:/QT/5.12.4/mingw73_64/mkspecs/win32-g++/qmak
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/resolve_config.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/exclusive_builds_post.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/default_post.prf \
-		E:/QT/5.12.4/mingw73_64/mkspecs/features/win32/console.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/resources.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/qtquickcompiler.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/precompile_header.prf \
@@ -244,6 +244,7 @@ Makefile: ../Sony-Aquaculture.pro E:/QT/5.12.4/mingw73_64/mkspecs/win32-g++/qmak
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/uic.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/qmake_use.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/file_copies.prf \
+		E:/QT/5.12.4/mingw73_64/mkspecs/features/win32/windows.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/testcase_targets.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/exceptions.prf \
 		E:/QT/5.12.4/mingw73_64/mkspecs/features/yacc.prf \
@@ -254,7 +255,8 @@ Makefile: ../Sony-Aquaculture.pro E:/QT/5.12.4/mingw73_64/mkspecs/win32-g++/qmak
 		E:/QT/5.12.4/mingw73_64/lib/Qt5Gui.prl \
 		E:/QT/5.12.4/mingw73_64/lib/Qt5Network.prl \
 		E:/QT/5.12.4/mingw73_64/lib/Qt5Sql.prl \
-		E:/QT/5.12.4/mingw73_64/lib/Qt5Core.prl
+		E:/QT/5.12.4/mingw73_64/lib/Qt5Core.prl \
+		E:/QT/5.12.4/mingw73_64/lib/qtmain.prl
 	$(QMAKE) -o Makefile ..\Sony-Aquaculture.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 E:/QT/5.12.4/mingw73_64/mkspecs/features/spec_pre.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/qdevice.pri:
@@ -419,6 +421,7 @@ E:/QT/5.12.4/mingw73_64/mkspecs/features/qt_functions.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/qt_config.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/win32-g++/qmake.conf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/exclusive_builds.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/toolchain.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/default_pre.prf:
@@ -426,7 +429,6 @@ E:/QT/5.12.4/mingw73_64/mkspecs/features/win32/default_pre.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/resolve_config.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/exclusive_builds_post.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/default_post.prf:
-E:/QT/5.12.4/mingw73_64/mkspecs/features/win32/console.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/resources.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/qtquickcompiler.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/precompile_header.prf:
@@ -437,6 +439,7 @@ E:/QT/5.12.4/mingw73_64/mkspecs/features/win32/opengl.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/uic.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/qmake_use.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/file_copies.prf:
+E:/QT/5.12.4/mingw73_64/mkspecs/features/win32/windows.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/testcase_targets.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/exceptions.prf:
 E:/QT/5.12.4/mingw73_64/mkspecs/features/yacc.prf:
@@ -448,6 +451,7 @@ E:/QT/5.12.4/mingw73_64/lib/Qt5Gui.prl:
 E:/QT/5.12.4/mingw73_64/lib/Qt5Network.prl:
 E:/QT/5.12.4/mingw73_64/lib/Qt5Sql.prl:
 E:/QT/5.12.4/mingw73_64/lib/Qt5Core.prl:
+E:/QT/5.12.4/mingw73_64/lib/qtmain.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Sony-Aquaculture.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 
